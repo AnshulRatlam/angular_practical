@@ -1,0 +1,108 @@
+<div class="button-container-ex">
+<div >
+<button mat-fab color="accent" >
+  <mat-icon>1</mat-icon>
+</button>
+<button mat-fab color="accent" >
+  <mat-icon>2</mat-icon>
+</button>
+<button mat-fab color="accent" >
+  <mat-icon>3</mat-icon>
+</button>
+<button mat-fab color="accent" >
+  <mat-icon>4</mat-icon>
+</button>
+<button mat-fab color="accent" >
+  <mat-icon>5</mat-icon>
+</button>
+</div>
+</div>
+<div>
+  <mat-card *ngIf="projectDetail">
+    <h4>Project Details</h4>
+    
+    <form [formGroup]="formGroupDetail" class="form">
+      <div class="container">
+        <mat-form-field class="form-element padding-gap">
+          <mat-select name="organization" placeholder="Organization" formControlName="organization">
+            <mat-option value="Hello">Hello</mat-option>
+            <mat-option value="XYZ">XYZ</mat-option>
+            <mat-option value="ABC">ABC</mat-option>
+          </mat-select>
+       </mat-form-field>
+       <mat-form-field class="form-element padding-gap">
+         <mat-select name="category" placeholder="category" formControlName="category">
+           <mat-option value="VolunteerAbroad">Volunteer Abroad</mat-option>
+           <mat-option value="VolunteerXYZ">Volunteer XYZ</mat-option>
+           <mat-option value="VolunteerABC">Volunteer ABC</mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-element padding-gap">
+       <mat-select name="Activity" placeholder="Activity" formControlName="activity">
+         <mat-option value="Agriculture">Agriculture</mat-option>
+         <mat-option value="Engineer">Engineer</mat-option>
+         <mat-option value="Information">Information</mat-option>
+       </mat-select>
+    </mat-form-field>
+         <mat-form-field class="form-element padding-gap">
+             <input matInput placeholder="Title" formControlName="title">
+         </mat-form-field>
+         <mat-form-field class="form-element padding-gap">
+           <input matInput placeholder="Minimum Age" formControlName="minimumAge">
+       </mat-form-field>
+       <mat-form-field class="form-element padding-gap">
+         <input matInput placeholder="Maximum Age" formControlName="MaximumAge">
+     </mat-form-field>
+      </div>
+     
+      <div class="form-element">
+      <button mat-raised-button class="button" (click)="activateNextSec(1)">Next Step</button>
+      </div>
+    </form>
+
+  </mat-card>
+  <mat-card  *ngIf="projectCost">
+    <h4>Project Cost</h4>
+    
+    <form [formGroup]="formGroupCost" class="form">
+      <div class="container">
+       
+         <mat-form-field class="form-element padding-gap">
+           <input matInput placeholder="Name" formControlName="name">
+       </mat-form-field>
+       <mat-form-field class="form-element padding-gap">
+         <input matInput placeholder="cost" formControlName="cost">
+     </mat-form-field>
+      </div>
+     
+      <div class="form-element">
+      <button mat-raised-button class="button" (click)="activateNextSec(2)">Next Step</button>
+      </div>
+    </form>
+
+  </mat-card>
+  <mat-card *ngIf="projectIncludes">
+    <h4>Project Include</h4>
+    
+    <form [formGroup]="formGroupIncludes" class="form">
+      <div class="container">
+       
+         <mat-form-field class="form-element padding-gap">
+           <input matInput placeholder="Name" formControlName="name">
+       </mat-form-field>
+       <mat-form-field class="form-element padding-gap">
+         <input matInput placeholder="cost" formControlName="includes">
+     </mat-form-field>
+      </div>
+     
+      <div class="form-element">
+      <button mat-raised-button class="button" (click)="activateNextSec(3)">Next Step</button>
+      </div>
+    </form>
+
+  </mat-card>
+  <mat-card>
+    <h2>Thank you For Details</h2>
+    <p>{{data | json}}</p>
+  </mat-card>
+</div>
